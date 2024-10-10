@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                git changelog: false, poll: false, url: 'https://github.com/jaiswaladi246/jpetstore-6.git'
+                git changelog: false, poll: false, url: 'https://github.com/siva1369/petstore-6.git'
             }
         }
         stage('Code Compile') {
