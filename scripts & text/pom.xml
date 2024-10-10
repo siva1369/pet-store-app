@@ -1,0 +1,35 @@
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.codehaus.cargo</groupId>
+            <artifactId>cargo-maven3-plugin</artifactId>
+            <version>1.10.7</version>
+            <configuration>
+                <container>
+                    <containerId>tomcat9x</containerId> <!-- Adjust as per your Tomcat version -->
+                    <zipUrlInstaller>
+                        <url>http://archive.apache.org/dist/tomcat/tomcat-9/v9.0.50/bin/apache-tomcat-9.0.50.zip</url> <!-- Example URL, replace with your Tomcat URL -->
+                        <installDir>${project.build.directory}/apache-tomcat-9.0.50</installDir> <!-- Adjust installDir as per your setup -->
+                    </zipUrlInstaller>
+                    <output>${project.build.directory}/cargo.log</output>
+                </container>
+                <configuration>
+                    <type>standalone</type>
+                    <properties>
+                        <cargo.servlet.port>8080</cargo.servlet.port> <!-- Adjust port if necessary -->
+                    </properties>
+                </configuration>
+            </configuration>
+            <executions>
+                <execution>
+                    <id>start-container</id>
+                    <phase>pre-integration-test</phase>
+                    <goals>
+                        <goal>start</goal>
+                        <goal>stop</goal> <!-- Optional: stop container after tests -->
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>

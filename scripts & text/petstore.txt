@@ -1,0 +1,28 @@
+petstore application:-
+---------------------
+
+https://github.com/jaiswaladi246/jpetstore-6
+
+
+plugins=
+
+jdk
+SonarQube
+owasp
+docker
+
+
+tools=
+
+jdk18
+SonarQube
+maven
+dependencky check
+dokcer
+
+
+credintials=
+
+sonar token 
+docker hub
+
